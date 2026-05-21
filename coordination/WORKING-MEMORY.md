@@ -140,6 +140,7 @@ Key node IDs:
 | TopTabBar | closed (2026-05-12) | Phase I (PR #20): operation + tab-strip; Phase J (PR #21): global actions fully closed; 12 assets; frame-preserving normalization + currentColor + multi-layer gradient lessons |
 | UpgradeDialog | closed (2026-05-20) | PRs #22/#23 merged; Phase K: downloading state 310×216 (instance-derived); Phase L: corrected to formal component set 2080:40359, all 4 variants 320×222/356, rounded-12, border+shadow; 6 assets; source promotion + hidden variant + hidden-fill export lessons |
 | BookmarkItem | closed (2026-05-20) | PR #24 merged; bookmark bar chip 1708:30231~30233; 24px height, content-driven width; generic star icon + app favicon variants; no new assets |
+| BookmarkBar | closed (2026-05-21) | PR #30 merged; full bar 1708:30228; divider + BookmarkItem(s) + More button; 3 assets exported |
 
 ## Phase Status
 
@@ -182,11 +183,17 @@ Key node IDs:
   - Extracted inline Toolbar bookmark chip to standalone BookmarkItem component.
   - Two icon variants: generic star + app favicon with bg/radius props.
   - Removed unused bookmarked prop from Toolbar and BrowserResultPage.
+- Phase N — BookmarkBar: **closed** (2026-05-21).
+  - agentic-browser-ui PR #30 merged. figma-to-code-skills PR #67 merged.
+  - Full bookmark bar: divider + BookmarkItem(s) + More button (24×24, rounded-99px).
+  - 3 assets exported: divider SVG, more-dot SVG, more-icon PNG.
+  - Durable lesson: all icons must be exported, not hand-drawn — no exceptions.
 
 ## Next Candidates
 
 No active track.
 
 Next candidates:
-- browser-ai-tools-product board-by-board UI restoration (9 boards, currently only assets exported)
+- browser-ai-tools-product board-by-board UI restoration (independent product track)
+- Quality gates: add gate row to existing case cards retroactively
 - Quality gates: smallest executable check scripts
