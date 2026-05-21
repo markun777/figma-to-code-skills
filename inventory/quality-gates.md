@@ -6,9 +6,10 @@ exporting new assets.
 ## Available gates
 
 ```
-npm run gate               # run both checks
-npm run gate:empty-svgs    # SVG geometry check only
-npm run gate:external-urls # external URL check only
+npm run gate                # run all three checks
+npm run gate:empty-svgs     # SVG geometry check only
+npm run gate:external-urls  # external URL check only
+npm run gate:banned-assets  # banned/legacy asset usage check only
 ```
 
 ## gate:empty-svgs
@@ -27,6 +28,26 @@ explaining why the empty SVG is intentional. The gate will print `[ok-exempt]`
 and pass.
 
 **When to run:** After every new SVG export from Figma.
+
+## gate:banned-assets
+
+**What it catches:** Source files that import or reference assets whose
+`slices-name-map.json` note contains `must not render`, `visible=false`,
+`legacy/unused`, or similar keywords.
+
+**Why it matters:** An asset can have visible geometry but still be banned from
+rendering (e.g. `upgrade-fail-circle` — the circle was restored during a fix
+attempt, but the Figma source fill is `visible=false`). `gate:empty-svgs` would
+pass because the file is no longer empty. This gate catches the re-introduction
+of such assets in future PRs.
+*(Incident: UpgradeDialog circle was re-imported after being marked legacy —
+this gate would have blocked it.)*
+
+**Exemption:** Remove the `must not render` / `visible=false` language from the
+`slices-name-map.json` note only if the asset is genuinely re-enabled by a
+confirmed Figma source change.
+
+**When to run:** Before opening any PR that adds or modifies asset imports.
 
 ## gate:external-urls
 
