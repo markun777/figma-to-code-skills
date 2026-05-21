@@ -118,6 +118,7 @@ Key node IDs:
 - **Instance-context vs canonical component-set source**: a scaled instance in a board may differ from the formal component set in a spec page (different geometry, radius, border style). Always preflight the canonical component set before implementing. If only an instance is available, document it as instance-derived and flag for correction.
 - **Hidden Figma variant handling**: hidden variants (`hidden="true"`) return blank renders from `get_design_context` and `get_screenshot`. Infer structure from sibling variants and metadata; document as inferred in the case card.
 - **Hidden fill beats empty-export repair**: Figma ellipse nodes can export as empty SVG groups with no path/circle element, but inspect layer/fill visibility before hand-authoring geometry. If the source fill is `visible=false`, the correct implementation is to render nothing for that layer.
+- **Quality gates before PR close**: run `npm run gate` in `agentic-browser-ui` before marking a component case closed. Three gates: `gate:empty-svgs` (catches empty SVG exports without slices-name-map exemption note), `gate:external-urls` (catches external image URLs in verify cards that can be blocked by ORB), `gate:banned-assets` (catches re-imports of legacy/must-not-render assets). See `inventory/quality-gates.md` for details.
 
 ## Component Status
 
