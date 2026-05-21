@@ -69,7 +69,7 @@ external URL is intentional and the ORB risk is accepted.
 
 ## Process rule
 
-Both gates should pass before a component case is marked `closed` in its case
+All three gates should pass before a component case is marked `closed` in its case
 card. Add a `gate` row to the Verification Status table:
 
 | Check | Status |
