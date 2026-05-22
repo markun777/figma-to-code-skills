@@ -63,12 +63,9 @@ This repo is built collaboratively by the user, Claude Code, and Codex.
 
 ## Current Focus
 
-Phase N closed (2026-05-21). No open PRs.
+Phase N in progress (2026-05-21). PR #30/#67 open.
 
-Lettered phases A–N complete. Components closed: Tab, InputBox, Toolbar, Dialog, AIToolsRow, Sidebar,
-BrowserResultPage/AssistantSidebarPanel, WorkspacePage, TaskResultPage,
-FileListCard, NavigationMenu, SearchBar, ModelCard, TopTabBar (Phase I+J),
-UpgradeDialog (Phase K+L), BookmarkItem (Phase M), BookmarkBar (Phase N).
+Lettered phases A–M complete. Phase N (BookmarkBar) pending merge.
 
 No active track. Next: browser-ai-tools-product (independent product track).
 

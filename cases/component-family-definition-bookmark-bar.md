@@ -2,7 +2,7 @@
 
 ## Status
 
-`closed` — full bar implemented from Figma `1708:30228`. agentic-browser-ui PR #30 merged.
+`closed` — full bar implemented from Figma `1708:30228`. agentic-browser-ui PR #30 pending merge.
 
 ## Source
 
