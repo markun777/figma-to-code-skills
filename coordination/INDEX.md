@@ -39,11 +39,11 @@ Local paths:
 
 ## Active Issues
 
-- [#13 — Coordination Log (permanent)](https://github.com/ken417mar-sudo/figma-to-code-skills/issues/13) — never close, rolling action log
+- [#13 — Coordination Log (permanent)](https://github.com/markun777/figma-to-code-skills/issues/13) — never close, rolling action log
 
 Closed:
-- [#12 — InputBox implement→verify](https://github.com/ken417mar-sudo/figma-to-code-skills/issues/12) — closed, all 4 states verified
-- [#4 — Phase 1 skill rewrite](https://github.com/ken417mar-sudo/figma-to-code-skills/issues/4) — all skills rewritten, Tab case closed
+- [#12 — InputBox implement→verify](https://github.com/markun777/figma-to-code-skills/issues/12) — closed, all 4 states verified
+- [#4 — Phase 1 skill rewrite](https://github.com/markun777/figma-to-code-skills/issues/4) — all skills rewritten, Tab case closed
 
 ## Active Figma File
 
