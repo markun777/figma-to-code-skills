@@ -10,6 +10,7 @@ Restore and validate `[PRODUCT_NAME]` from the Figma source of truth.
 - Figma file: `[FIGMA_FILE_KEY_OR_URL]`
 - Source section/page: `[SOURCE_SECTION_OR_PAGE]`
 - Product surface: `[ONE_SENTENCE_PRODUCT_SURFACE]`
+- Target platform / form factors: `[PLATFORM / FORM_FACTORS]`
 
 This repo is independent from `figma-to-code-skills`. Treat
 `figma-to-code-skills` as the workflow/template source, not as the
@@ -42,9 +43,17 @@ product worktree.
 - Export design-owned assets before wiring code that depends on them.
 - Implement board by board in the order recorded in
   `FIGMA_BOARD_STATE_MAP.md`.
-- Every implemented state must have browser verification evidence.
+- Every implemented state must have evidence from the declared
+  verification surface.
 - A dev server preview is not sufficient handoff evidence; run the build
-  command and verify the production preview/package path.
+  command and verify the production preview, installed build, or package
+  path appropriate to the platform.
+- For Android work, record the emulator/device profile, system bar/inset
+  policy, and packaged resource/density verification before claiming a
+  board verified.
+- For phone-and-pad products, do not mark a feature complete until each
+  claimed form factor has its own mapped Figma source, adaptive layout
+  decision, and rendered verification evidence.
 - Before handoff, remove temporary demo/test/verification UI from the
   production-facing product. Keep evidence in docs or PR notes, not in
   the final user flow.
@@ -69,8 +78,9 @@ Before handoff, run:
 
 1. `[BUILD_COMMAND]`
 2. `[PREVIEW_COMMAND_OR_PACKAGE_CHECK]`
-3. Browser verification for the current board/state.
-4. Asset path check for production output.
+3. `[RENDERED_VERIFICATION_SURFACE]` verification for the current
+   board/state, such as browser, iOS simulator, or Android emulator.
+4. Asset path or packaged-resource check for the delivered output.
 5. Handoff cleanup check: no temporary demo route, verify card,
    screenshot-only board, mock panel, debug label, or test control is
    visible in the production-facing product.

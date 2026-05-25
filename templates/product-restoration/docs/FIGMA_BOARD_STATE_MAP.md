@@ -1,14 +1,15 @@
 # Figma Board / State Map
 
 Source section/page: `[SOURCE_SECTION_OR_PAGE]`
+Form factors: `[web | phone | pad | phone-and-pad | other]`
 
 ## Canonical Board Map
 
-| Order | Canonical Name | Figma Node | Raw Name | Role | Status |
-|---:|---|---|---|---|---|
-| 1 | `[01-default]` | `[NODE_ID]` | `[RAW_NAME]` | default state | `[mapped | cleaned | implemented | verified]` |
-| 2 | `[02-panel-open]` | `[NODE_ID]` | `[RAW_NAME]` | panel open | `[mapped | cleaned | implemented | verified]` |
-| 3 | `[03-hover-process]` | `[NODE_ID]` | `[RAW_NAME]` | hover/process state | `[mapped | cleaned | implemented | verified]` |
+| Order | Form Factor | Canonical Name | Figma Node | Raw Name | Role | Status |
+|---:|---|---|---|---|---|---|
+| 1 | `[phone | pad | shared]` | `[01-default]` | `[NODE_ID]` | `[RAW_NAME]` | default state | `[mapped | cleaned | implemented | verified]` |
+| 2 | `[phone | pad | shared]` | `[02-panel-open]` | `[NODE_ID]` | `[RAW_NAME]` | panel open | `[mapped | cleaned | implemented | verified]` |
+| 3 | `[phone | pad | shared]` | `[03-hover-process]` | `[NODE_ID]` | `[RAW_NAME]` | hover/process state | `[mapped | cleaned | implemented | verified]` |
 
 ## State Source Rules
 
@@ -20,6 +21,9 @@ Source section/page: `[SOURCE_SECTION_OR_PAGE]`
   code and docs.
 - If two Figma contexts disagree, record a source audit instead of
   mixing them in code.
+- For phone-and-pad products, never assume the pad state is equivalent
+  to the phone state just because labels match. Record shared behavior
+  separately from form-factor-specific composition.
 
 ## Deferred / Ambiguous Sources
 

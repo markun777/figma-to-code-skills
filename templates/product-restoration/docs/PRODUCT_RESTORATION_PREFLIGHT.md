@@ -9,6 +9,12 @@ Status: `[not-started | in-progress | complete]`
 - Source section/page: `[SOURCE_SECTION_OR_PAGE]`
 - Target platform: `[web | ios | android | other]`
 - Framework/runtime: `[FRAMEWORK]`
+- Token format: `[TOKEN_FORMAT]`
+- Form factors: `[phone | pad | phone-and-pad | other]`
+- Device/viewport profiles: `[PROFILE_PER_FORM_FACTOR]`
+- Adaptive layout policy: `[POLICY_OR_NOT_APPLICABLE]`
+- System UI/inset policy: `[SYSTEM_UI_POLICY_OR_NOT_APPLICABLE]`
+- Verification surface: `[browser | storybook | ios-simulator | android-emulator | other]`
 - Build command: `[BUILD_COMMAND]`
 - Preview/package check: `[PREVIEW_COMMAND_OR_PACKAGE_CHECK]`
 
@@ -31,6 +37,12 @@ Implementation may start only after:
 - [ ] required assets are classified and exported or scheduled;
 - [ ] interaction rules for the first slice are confirmed;
 - [ ] verification surface is defined.
+- [ ] for mobile targets, source-frame/unit mapping and system UI/inset
+      ownership are defined.
+- [ ] for multi-form-factor targets, each form factor has mapped boards,
+      layout adaptations, and a verification device/surface.
+- [ ] for Android targets, drawable/density packaging and emulator/device
+      verification are defined.
 - [ ] handoff cleanup rule is defined: temporary demo/test/verification
       UI must be removed from the production-facing product before
       closeout.
@@ -43,8 +55,9 @@ Before final handoff:
 - [ ] verify cards, screenshot-only boards, and mock panels are removed
       from the user-facing flow
 - [ ] debug labels, test controls, and fixture selectors are not visible
-      in the production preview/package
-- [ ] browser/DOM/build evidence is recorded in docs or PR notes
+      in the delivered preview/installed build/package
+- [ ] rendered-verification/build/package evidence is recorded in docs
+      or PR notes
 - [ ] automated tests, build scripts, verification docs, and reusable
       fixtures are preserved unless explicitly obsolete
 
@@ -61,6 +74,6 @@ Current status:
 - `[ ]` preflight-complete
 - `[ ]` implementation-ready
 - `[ ]` board-verified
-- `[ ]` production-preview-verified
+- `[ ]` delivery-surface-verified
 - `[ ]` handoff-cleaned
 - `[ ]` blocked

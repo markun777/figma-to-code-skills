@@ -112,6 +112,13 @@ of duplicating them.
      reasonable product UI; each state needs a Figma node or approved
      provisional source.
    - tech-stack profile is complete enough to shape implementation
+   - for mobile product restoration, the profile also records the source
+     device/frame interpretation, system bar/inset ownership, and the
+     simulator/emulator verification surface before layout code starts
+   - if mobile scope includes phone and pad, each form factor has an
+     explicit source/state map, adaptive layout decision, and
+     verification profile; do not implement pad as an assumed scale-up
+     of the phone board
    - component target and variant axes are identified
    - for a new component or new component-family slice, a `Component
      Family Definition` card exists, or a minimum scope note is recorded
@@ -176,9 +183,9 @@ of duplicating them.
      plan to visually compare the rendered implementation against the
      target node; axis coverage alone is not enough to claim
      verification-complete
-   - for product restoration handoff, a dev server is not enough. There
-     must be a build plus production preview/package asset-path check
-     before claiming production-preview-verified.
+   - for product restoration handoff, a development preview is not enough.
+     There must be a build plus platform-appropriate preview, installed
+     build, or package resource check before claiming delivery verified.
    - for product restoration handoff, temporary demo/test/verification
      UI must be removed from the production-facing product before
      closeout. Preserve verification evidence in docs or PR notes; do
