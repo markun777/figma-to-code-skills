@@ -107,6 +107,11 @@ of duplicating them.
      before UI code starts: Figma board/state map, layout constants,
      token snapshot, asset manifest, and interaction contract. If any is
      missing, stop and create it first in the product repo.
+   - for product restoration with a confirmed design system or variable
+     library, `TOKEN_SNAPSHOT.md` records the default source,
+     collections/modes, applicable form factors, and semantic-token
+     binding policy before style implementation; record exceptions
+     instead of silently adding raw values or local tokens.
    - for product restoration, implementation proceeds board by board from
      the board/state map. Do not start by inventing a generally
      reasonable product UI; each state needs a Figma node or approved
@@ -117,8 +122,9 @@ of duplicating them.
      simulator/emulator verification surface before layout code starts
    - if mobile scope includes phone and pad, each form factor has an
      explicit source/state map, adaptive layout decision, and
-     verification profile; do not implement pad as an assumed scale-up
-     of the phone board
+     verification profile; shared surfaces use the recorded token
+     baseline unless an exception is approved; do not implement pad as
+     an assumed scale-up of the phone board
    - component target and variant axes are identified
    - for a new component or new component-family slice, a `Component
      Family Definition` card exists, or a minimum scope note is recorded

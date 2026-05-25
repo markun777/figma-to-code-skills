@@ -41,6 +41,10 @@ product worktree.
 - Do not rebuild design-owned icons, widgets, screenshots, or
   illustrations in code unless they are approved code-drawn primitives.
 - Export design-owned assets before wiring code that depends on them.
+- Read the confirmed default design-system/variable library from
+  `docs/TOKEN_SNAPSHOT.md` before styling a surface. Bind semantic
+  tokens by default; document approved raw-value or local-token
+  exceptions there before implementation.
 - Implement board by board in the order recorded in
   `FIGMA_BOARD_STATE_MAP.md`.
 - Every implemented state must have evidence from the declared
@@ -53,7 +57,8 @@ product worktree.
   board verified.
 - For phone-and-pad products, do not mark a feature complete until each
   claimed form factor has its own mapped Figma source, adaptive layout
-  decision, and rendered verification evidence.
+  decision, rendered verification evidence, and confirmed use of the
+  shared token baseline unless an exception is documented.
 - Before handoff, remove temporary demo/test/verification UI from the
   production-facing product. Keep evidence in docs or PR notes, not in
   the final user flow.

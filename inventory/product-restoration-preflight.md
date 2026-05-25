@@ -49,6 +49,12 @@ product repo:
      the product.
    - States whether tokens come from existing code, Figma variables, or
      extracted draft rules.
+   - Names the confirmed default design-system/variable library, its
+     source page or node, collections/modes, and which form factors
+     consume it.
+   - Defines the binding rule: when a default variable library exists,
+     product surfaces use its semantic tokens by default; raw values or
+     new local tokens require a recorded exception.
    - Flags unresolved token conflicts instead of silently picking one.
 4. `docs/ASSET_MANIFEST.md`
    - Classifies every design-owned image/icon as `existing export`,
@@ -75,6 +81,8 @@ Implementation may start only when:
 - the tech-stack profile identifies target, framework, token format,
   verification surface, and any mobile device/system-UI policy that
   affects layout;
+- the default token/design-system source and binding policy are recorded,
+  or the preflight explicitly states that no confirmed baseline exists;
 - every claimed form factor has a source frame/state mapping and a
   verification device or surface;
 - every implemented state can point back to a Figma node or an approved
@@ -95,6 +103,9 @@ For Android or iOS products, settle these questions before UI code:
   dimensions mapped to platform units?
 - If both phone and pad are required, which layout regions are shared,
   which recompose, and what adaptive layout policy selects them?
+- If phone and pad share a confirmed variable library, which semantic
+  tokens are mandatory across both surfaces and how are exceptions
+  reviewed?
 - Do the status bar and system navigation area belong to the operating
   system, an edge-to-edge app layout, or a design-only reference frame?
 - What density/scale asset output and package resource locations are

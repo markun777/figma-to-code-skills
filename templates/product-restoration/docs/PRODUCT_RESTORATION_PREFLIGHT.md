@@ -10,6 +10,9 @@ Status: `[not-started | in-progress | complete]`
 - Target platform: `[web | ios | android | other]`
 - Framework/runtime: `[FRAMEWORK]`
 - Token format: `[TOKEN_FORMAT]`
+- Default design system / variable library: `[FIGMA_SPEC_OR_TOKEN_SOURCE]`
+- Variable collections / modes: `[COLLECTIONS_AND_MODES]`
+- Token binding policy: `[SEMANTIC_TOKEN_DEFAULT_AND_EXCEPTION_POLICY]`
 - Form factors: `[phone | pad | phone-and-pad | other]`
 - Device/viewport profiles: `[PROFILE_PER_FORM_FACTOR]`
 - Adaptive layout policy: `[POLICY_OR_NOT_APPLICABLE]`
@@ -24,7 +27,7 @@ Status: `[not-started | in-progress | complete]`
 |---|---|---|
 | `FIGMA_BOARD_STATE_MAP.md` | `[ ]` | Board/state nodes mapped before code |
 | `LAYOUT_CONSTANTS.md` | `[ ]` | Stable geometry and responsive limits |
-| `TOKEN_SNAPSHOT.md` | `[ ]` | Colors, type, radii, shadows, effects |
+| `TOKEN_SNAPSHOT.md` | `[ ]` | Default variable source, modes, binding policy, colors, type, radii, shadows, effects |
 | `ASSET_MANIFEST.md` | `[ ]` | Export plan and asset paths |
 | `INTERACTION_CONTRACT.md` | `[ ]` | Confirmed actions and blocked inventions |
 
@@ -37,6 +40,8 @@ Implementation may start only after:
 - [ ] required assets are classified and exported or scheduled;
 - [ ] interaction rules for the first slice are confirmed;
 - [ ] verification surface is defined.
+- [ ] the default design-system/variable source, modes, applicable form
+      factors, and exception policy are recorded in `TOKEN_SNAPSHOT.md`.
 - [ ] for mobile targets, source-frame/unit mapping and system UI/inset
       ownership are defined.
 - [ ] for multi-form-factor targets, each form factor has mapped boards,
