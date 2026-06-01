@@ -276,6 +276,31 @@ Do not ask when:
   3. inspect the exported SVG canvas / viewBox
   Many size bugs come from asset padding or mismatched icon-frame sizing,
   not from the parent layout.
+- Figma canvas dimensions (e.g. 412×914 for a phone screen) are reference
+  coordinates for the design tool, not hard layout constraints. Use flexible
+  layout (`match_parent`, `weight`, percentage-based spacing) rather than
+  fixed pixel dimensions wherever the container is expected to resize. A
+  layout that only works at exactly the Figma canvas size will break on
+  devices with different aspect ratios, system bar heights, or density
+  configurations.
+- System UI elements drawn in Figma (status bars, navigation bars, gesture
+  handles, camera notches, safe-area insets) are design annotation, not
+  implementation deliverable. They exist in the design file to give layout
+  context and to document the expected safe area. Do not implement them in
+  code — the OS renders them. The implementation should express the content
+  layout with correct insets so the system UI overlays it correctly. Only
+  implement a status or navigation bar when the product explicitly owns
+  that chrome (e.g. a custom in-app toolbar, not the OS status bar).
+- Separate form factors in the same Figma file that share a token system
+  but have independent compositions (e.g. Phone vs. Tablet, Compact vs.
+  Expanded) must be treated as separate implementation boards. Do not
+  scale, stretch, or copy one form factor's layout to approximate another.
+  Implement each composition from its own Figma board.
+- Every token value mapped from Figma into implementation code must record
+  its canonical Figma variable name. Without this, nobody knows where a
+  value came from when the design changes. Use a comment in the platform's
+  native token format (XML comment, CSS comment, config file comment).
+  Token values without source annotations are technical debt.
 
 ## Verification
 

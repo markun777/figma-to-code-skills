@@ -162,13 +162,17 @@ Extracted from inline Toolbar implementation; removed unused bookmarked prop.
 agentic-browser-ui PR #24, figma-to-code-skills PR #61.
 Durable lessons: inline extraction clarifies component boundary; content-driven width (no fixed width); two icon slot types in one component via optional props.
 
+## Active Work
+
+`skill/android-implement-lessons` — Claude Code: cross-platform gotcha harvest from `mobile-home-android` project (Phone + Ask AI XML delivery). 4 skills receiving platform-agnostic gotchas (2026-06-01).
+
 ## Open PRs
 
-No open PRs in either repo.
+No prior open PRs. One pending for `skill/android-implement-lessons`.
 
 ## Next Recommended Action
 
-Phase M closed. Next candidates:
+Merge Claude Code Android gotcha PR (#pending). Then:
 - browser-ai-tools-product board-by-board UI restoration (9 boards, currently only assets exported)
 - Quality gates: smallest executable check scripts
 
