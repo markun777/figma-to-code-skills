@@ -52,10 +52,26 @@ This repo is built collaboratively by the user, Claude Code, and Codex.
   [skills/README.md](skills/README.md)
 - Copyable templates:
   [templates/README.md](templates/README.md)
+- Installable process package:
+  [packages/README.md](packages/README.md)
+
+## Installable Process Package
+
+The full workflow can be installed as one agent-facing package:
+
+```bash
+scripts/install-figma-to-code-process.sh
+```
+
+This installs a single `figma-to-code-process` entry point for Codex,
+Claude Code, and generic agent-skill directories. Internal phase skills stay
+inside the package as references so agents follow one workflow instead of
+choosing from separate sub-skills.
 
 ## Repository Layout
 
 - `skills/`: executable skill prompts used by agents
+- `packages/`: installable agent packages generated from workflow sources
 - `inventory/`: workflow rules, templates, and stack profiles
 - `templates/`: copyable starter files for product repos and case work
 - `coordination/`: shared status, active case memory, and handoff context

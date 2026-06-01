@@ -1,0 +1,7 @@
+interface:
+  display_name: "Figma To Code Process"
+  short_description: "Run the full Figma-to-code workflow"
+  default_prompt: "Use $figma-to-code-process to implement and verify this Figma design in the target codebase."
+policy:
+  allow_implicit_invocation: true
+
