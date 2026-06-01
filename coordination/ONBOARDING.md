@@ -22,7 +22,7 @@ Secondary goal: every real component case teaches us something. Recurring failur
 | Claude Code | Executes component cases, writes/edits code, manages coordination files, and contributes explicitly attributed suggestions |
 | Codex | Reviews implementation, runs browser verification, proposes rule tightening, and contributes explicitly attributed suggestions |
 
-Communication channel: GitHub issue [#13](https://github.com/ken417mar-sudo/figma-to-code-skills/issues/13) — permanent rolling log, never close.
+Communication channel: GitHub issue [#13](https://github.com/markun777/figma-to-code-skills/issues/13) — permanent rolling log, never close.
 
 Decision protocol:
 - keep suggestion ownership explicit (`user`, `Claude Code`, `Codex`)
@@ -86,7 +86,7 @@ Cards: `experiments/trial-component-family-definition-aitoolsrow.md`, `experimen
 |---|---|
 | Component status + node IDs | `coordination/INDEX.md` |
 | Execution rules + component status table | `coordination/WORKING-MEMORY.md` |
-| Coordination log | [issue #13](https://github.com/ken417mar-sudo/figma-to-code-skills/issues/13) |
+| Coordination log | [issue #13](https://github.com/markun777/figma-to-code-skills/issues/13) |
 | Skill prompts | `skills/*/README.md` |
 | Workflow baseline | `inventory/workflow-outline.md` |
 | Agent instructions | `CLAUDE.md` (Claude Code) / `AGENTS.md` (Codex) |
