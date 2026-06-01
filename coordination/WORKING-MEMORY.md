@@ -190,9 +190,18 @@ Key node IDs:
   - DOM evidence: default bar 133.71×24 inline-flex; three-item bar 298.01×24.
   - Durable lesson: all icons must be exported, not hand-drawn — no exceptions.
 
+## Active Track
+
+`skill/android-implement-lessons` (2026-06-01) — Claude Code: cross-platform gotchas from `mobile-home-android` XML delivery experience. 4 skills updated:
+
+- `figma-implement-design`: Figma canvas coords ≠ device constraints; system UI is annotation; separate form factors = separate boards; token traceability.
+- `figma-export-slices`: SVG→vector transform; vectors skip density buckets; `<shape>` over PNG; `_export` naming recognition.
+- `figma-verify-implementation`: build ≠ visual correct; density hides drift; stale screenshots corrupt verification; token audit as gate.
+- `figma-capture-design-system`: structured naming conventions (`section/`, `module/`, `item/`) are design-intent signals; `组件` page outranks `设计稿` instances.
+
 ## Next Candidates
 
-No active track.
+No active track after PR merge.
 
 Next: browser-ai-tools-product (independent product track).
 - Quality gates: smallest executable check scripts
