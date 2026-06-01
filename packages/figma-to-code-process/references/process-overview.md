@@ -37,6 +37,5 @@ workflow package repository.
 - `product-restoration-preflight.md`: product repo bootstrap gates.
 - `quality-gates.md`: executable gate descriptions from validated cases.
 - `official-skills-alignment.md`: boundary map against official Figma skills.
-- `cases/`: completed case cards for examples and evidence patterns.
+- `examples/`: distilled reusable patterns derived from completed cases.
 - `assets/product-restoration-template/`: copyable product preflight package.
-

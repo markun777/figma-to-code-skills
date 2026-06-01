@@ -188,3 +188,30 @@ The interview flow branches by `target` from the tech-stack profile.
   token mapping, safe area and dynamic type handling.
 - **android**: Material alignment, Compose vs XML token mapping, density
   bucket rules, adaptive layout conventions.
+
+## Gotchas
+
+- When the Figma file has a dedicated component page with hierarchical
+  naming conventions (e.g. `section/site-grid`, `module/search-input-row`,
+  `item/nav-tab/home`, `image/baidu-icon_export`), recognize those as
+  structured design-intent signals. The slash-separated prefix tells you
+  the designer's intended hierarchy (screen → section → module → item),
+  and a suffix like `_export` marks an explicit asset-export request. Do
+  not ignore this structure and start inferring component boundaries from
+  scratch — the designer already encoded them. Interview the designer to
+  confirm the convention, then record it in the captured rules as a
+  project-specific asset.
+- A Figma file that contains separate pages named `设计稿` (screens),
+  `组件` (components), and `草稿` (drafts) follows a common Chinese
+  design workflow pattern. The `组件` page is the authoritative component
+  reference. The `设计稿` page may duplicate components as instances
+  inside screens. When both pages contain the same component, the `组件`
+  page version takes priority as the source of truth — it represents the
+  designer's intended reusable definition, while the `设计稿` instances
+  are screen-level compositions that may have per-screen overrides.
+- A component page that defines named frames with underscores and Chinese
+  labels (e.g. `screen/mobile-home`, `section/bottom-nav`) has more
+  structure than a flat list of unnamed frames. Capture this naming schema
+  as part of the rule set — it directly maps to the implementation's file
+  organization (e.g. `res/layout/`, `res/drawable/`, component files).
+  Do not discard this organizational signal during capture.

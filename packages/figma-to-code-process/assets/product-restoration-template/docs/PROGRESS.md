@@ -12,15 +12,15 @@ Last updated: `[DATE]`
 
 ## Board Checklist
 
-| Order | Board | Node | Preflight | Assets | Implemented | Verified |
-|---:|---|---|---|---|---|---|
-| 1 | `[BOARD]` | `[NODE_ID]` | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| Order | Form Factor | Board | Node | Preflight | Assets | Implemented | Verified |
+|---:|---|---|---|---|---|---|---|
+| 1 | `[phone | pad | shared]` | `[BOARD]` | `[NODE_ID]` | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 
 ## Verification Log
 
-| Date | Board / State | Evidence | Result |
+| Date | Form Factor / Board / State | Evidence | Result |
 |---|---|---|---|
-| `[DATE]` | `[STATE]` | `[BUILD/PREVIEW/DOM/SCREENSHOT]` | `[PASS/FAIL]` |
+| `[DATE]` | `[PHONE_OR_PAD / STATE]` | `[BUILD/PACKAGE/RENDERED-SURFACE/SCREENSHOT]` | `[PASS/FAIL]` |
 
 ## Handoff Cleanup
 
@@ -29,7 +29,7 @@ Last updated: `[DATE]`
 | Temporary demo routes/pages removed | `[ ]` | `[NOTES]` |
 | Verify cards / screenshot-only boards removed from product UI | `[ ]` | `[NOTES]` |
 | Mock panels, debug labels, and test controls hidden from production | `[ ]` | `[NOTES]` |
-| Production preview opens on intended product surface | `[ ]` | `[NOTES]` |
+| Delivered preview/installed build opens on intended product surface | `[ ]` | `[NOTES]` |
 | Verification evidence preserved in docs/PR notes | `[ ]` | `[NOTES]` |
 
 ## Next Step

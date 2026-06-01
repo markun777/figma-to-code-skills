@@ -313,6 +313,33 @@ Do not ask when:
   compressed by sibling elements. Verify: progress bar height matches
   Figma spec (e.g. 8px); label row has a fixed height and `shrink-0`
   so it does not grow and squeeze the bar.
+- **Build success is not visual correctness**: `assembleDebug` or equivalent
+  passing only proves the code compiles. Every implementation must be
+  installed on the target verification surface (emulator, device, browser)
+  and compared side-by-side against the Figma source screenshot before it
+  can be marked as closed. A clean build with no screenshot evidence is
+  incomplete.
+- **Density scaling hides real drift**: Figma designs at 1× (mdpi) while
+  real devices render at higher densities (e.g. 440dpi ≈ xxhdpi). Pixel
+  measurements from a device screenshot will not match Figma pixel values
+  directly. Account for the density ratio (e.g. divide device pixels by
+  density multiplier) before declaring a mismatch. A 1dp gap at mdpi
+  becomes ~3px at xxhdpi — that is expected, not a bug.
+- **Verification evidence rots when the Figma source changes**: when the
+  implementation is updated to match a new Figma node, delete the old
+  Figma reference screenshot and the old emulator screenshot. Replace them
+  with fresh captures from the new source node and new build. Keeping
+  stale screenshots from old versions makes it impossible to tell which
+  comparison is current. One Figma source → one reference screenshot →
+  one emulator screenshot per board per verification pass.
+- **Token values require one extra verification step beyond geometry**:
+  after confirming layout dimensions match Figma, run a token audit:
+  every color, spacing value, and font size in the implementation must
+  reference the platform's token from the canonical design system, not a
+  hardcoded literal. Hardcoded `#cccccc` that matches the design today
+  breaks tomorrow when the token changes to `#dddddd`. Token audit is a
+  P2 verification gate — a layout with hardcoded values passes geometry
+  but fails the token source check.
 
 ## Verification
 
