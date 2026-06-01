@@ -7,8 +7,8 @@ workflow docs in this repository.
 
 `figma-to-code-process` is the single-entry package for the full workflow.
 It is intentionally not a set of separately installed skills. The package
-installs one agent-visible entry point, then keeps the internal phase rules as
-references loaded only when needed.
+installs one agent-visible entry point, then keeps the internal phase rules and
+distilled examples as references loaded only when needed.
 
 Install locally:
 
@@ -34,4 +34,3 @@ Run a no-write install preview:
 ```bash
 scripts/install-figma-to-code-process.sh --dry-run
 ```
-

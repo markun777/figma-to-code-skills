@@ -31,6 +31,9 @@ current phase.
 5. Load the narrow reference file for the active phase from
    `references/source-skills/`. Avoid loading the full package unless the task
    genuinely crosses phases.
+6. When an example would help, load `references/examples/README.md` and then
+   the one distilled example that matches the current failure mode. Do not
+   treat examples as source-of-truth for the current product.
 
 ## Required Gates
 
@@ -71,6 +74,7 @@ Run these gates for every real implementation case:
   and copy `assets/product-restoration-template/` into the product repo.
 - For web motion only after state/source confirmation, load
   `references/source-skills/ui-motion-patterns.md`.
+- For compact reusable examples, load `references/examples/README.md`.
 
 ## Clarification Policy
 
@@ -96,4 +100,3 @@ End every run with:
 - build/run/verification commands and whether they passed;
 - any unresolved drift or blocked gate;
 - where the next agent should resume.
-

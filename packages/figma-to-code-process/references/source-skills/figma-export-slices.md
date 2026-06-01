@@ -76,3 +76,25 @@ Examples:
   path as `fill="none" stroke="currentColor" stroke-width="1"` (or the
   correct stroke width from Figma). Verify the result visually before
   committing.
+- When exporting SVG assets for Android, the target format is Android
+  Vector Drawable (`<vector>`), not raw SVG. Three transforms are always
+  required: (1) replace `<line>` elements with `<path>` equivalents
+  (Android VectorDrawable does not support `<line>`), (2) replace CSS
+  variable syntax (`var(--fill-0, #333)`) with the platform's token
+  reference (`@color/text_primary`) or a hardcoded hex, and (3) replace
+  `fill="none"` with `android:fillColor="@android:color/transparent"`.
+  Do not commit raw SVG to `res/drawable/` without these transforms.
+- Vector drawables (Android `<vector>`) do not need density buckets.
+  They are resolution-independent and belong in `res/drawable/`, not in
+  `res/drawable-hdpi/` etc. Only PNG and WebP raster assets need
+  density-specific directories.
+- Prefer Android `<shape>` drawables for simple geometry (rounded
+  rectangles, ovals, lines, gradient backgrounds). Exporting a PNG for a
+  shape that can be expressed in a 10-line `<shape>` XML is wasteful:
+  the PNG is larger, blurry at different densities, and must be
+  re-exported whenever the design color changes.
+- If a Figma component page uses a naming convention like `_export` as a
+  suffix on asset layer names (e.g. `image/baidu-icon_export`), recognize
+  that as an explicit asset-export signal from the designer. Include it in
+  the asset inventory and route it through export first. Do not treat it
+  as a raw layer name that needs renaming — the designer already marked it.

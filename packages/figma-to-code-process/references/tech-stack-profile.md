@@ -47,6 +47,17 @@ Example:
 `storybook`
 `ios-simulator`
 `android-emulator`
+- `form_factors`
+Example: `phone`, `pad`, `phone-and-pad`
+- `device_profile`
+Example: `phone-412x914-source-frame`, `pad-1280-wide-source-frame`
+- `adaptive_layout_policy`
+Example: `separate-phone-pad-compositions`, `window-size-class-driven`
+- `system_ui_policy`
+Example: `system-owned-bars-with-insets`, `edge-to-edge-app-draws-behind-bars`,
+`design-frame-only`
+- `package_verification`
+Example: `apk-install-and-launch`, `bundle-resource-check`
 
 ## Why this matters
 
@@ -84,6 +95,16 @@ asset workflow
 - density buckets: `mdpi`, `hdpi`, `xhdpi`, `xxhdpi`, `xxxhdpi`
 - preferred raster: `webp` when supported by the project
 - fallback raster: `png`
+- record whether Figma dimensions are interpreted as `dp`, scaled from a
+  reference device, or limited to visual comparison only
+- when both phone and pad are in scope, record each source frame and the
+  adaptive-layout breakpoint/composition policy; do not infer the pad
+  layout by stretching the phone screen
+- record whether status/navigation bars belong to the operating system or
+  the app layout before implementing top/bottom spacing
+- verify Android work on named emulator/device profiles for each claimed
+  form factor and check packaged drawable/resource resolution, not only
+  a design preview
 
 ## Workflow rule
 

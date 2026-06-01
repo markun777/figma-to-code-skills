@@ -5,8 +5,11 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "${script_dir}/.." && pwd)"
 package_dir="${repo_root}/packages/figma-to-code-process"
 
+rm -rf "${package_dir}/references/source-skills"
+rm -rf "${package_dir}/references/cases"
+rm -rf "${package_dir}/assets/product-restoration-template"
+
 mkdir -p "${package_dir}/references/source-skills"
-mkdir -p "${package_dir}/references/cases"
 mkdir -p "${package_dir}/assets"
 
 cp "${repo_root}/inventory/workflow-outline.md" "${package_dir}/references/workflow-outline.md"
@@ -21,12 +24,6 @@ for skill_readme in "${repo_root}"/skills/*/README.md; do
   cp "${skill_readme}" "${package_dir}/references/source-skills/${skill_name}.md"
 done
 
-for case_file in "${repo_root}"/cases/*.md; do
-  cp "${case_file}" "${package_dir}/references/cases/$(basename "${case_file}")"
-done
-
-rm -rf "${package_dir}/assets/product-restoration-template"
 cp -R "${repo_root}/templates/product-restoration" "${package_dir}/assets/product-restoration-template"
 
 echo "Built ${package_dir}"
-
