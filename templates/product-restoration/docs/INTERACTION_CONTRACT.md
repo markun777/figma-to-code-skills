@@ -31,6 +31,17 @@ them:
 - hidden layers that are not confirmed product states
 - extra close/minimize/pin controls not shown or approved
 
+## Mobile Interaction Decisions
+
+Complete this section for Android or iOS targets before implementing
+affected flows.
+
+| Decision | Source Node / Approval | Result |
+|---|---|---|
+| Keyboard/IME behavior for text input | `[NODE_ID_OR_APPROVAL]` | `[RESULT_OR_DEFERRED]` |
+| Back gesture/button behavior | `[NODE_ID_OR_APPROVAL]` | `[RESULT_OR_DEFERRED]` |
+| Touch/pressed or accessibility behavior | `[NODE_ID_OR_APPROVAL]` | `[RESULT_OR_DEFERRED]` |
+
 ## Open Questions
 
 | Question | Why It Matters | Decision |
