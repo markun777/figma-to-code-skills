@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "figma-to-code-process",
+  "description": "Single-entry Figma-to-code workflow package for Codex, Claude Code, and other coding agents.",
+  "skills": [
+    {
+      "name": "figma-to-code-process",
+      "path": "packages/figma-to-code-process",
+      "entrypoint": "packages/figma-to-code-process/SKILL.md"
+    }
+  ],
+  "install": {
+    "script": "scripts/install-figma-to-code-process.sh",
+    "from_github_script": "scripts/install-from-github.sh",
+    "raw_command": "curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash"
+  }
+}
+

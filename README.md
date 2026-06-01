@@ -4,6 +4,36 @@ This repository holds the executable prompts, workflow rules, gotchas,
 and coordination memory for the Figma-to-code system we are refining
 across real component cases.
 
+## Install This Skill
+
+If you are an AI agent and a user gives you this repo link asking to install
+the skill, read [AI_INSTALL.md](AI_INSTALL.md) first. Install the single skill
+package at:
+
+```text
+packages/figma-to-code-process
+```
+
+One-command install for Codex, Claude Code, and generic agent skill folders:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash
+```
+
+Local clone install:
+
+```bash
+git clone https://github.com/markun777/figma-to-code-skills.git
+cd figma-to-code-skills
+./install.sh
+```
+
+Installed skill name:
+
+```text
+figma-to-code-process
+```
+
 ## What This Repo Does
 
 The project is built to make messy or non-standard design files
