@@ -34,6 +34,14 @@ Installed skill name:
 figma-to-code-process
 ```
 
+Check whether an installed copy is current:
+
+```bash
+~/.codex/skills/figma-to-code-process/scripts/check-for-updates.sh
+```
+
+If the command reports an update, rerun the install command above.
+
 ## What This Repo Does
 
 The project is built to make messy or non-standard design files
@@ -104,20 +112,15 @@ choosing from separate sub-skills.
 - `packages/`: installable agent packages generated from workflow sources
 - `inventory/`: workflow rules, templates, and stack profiles
 - `templates/`: copyable starter files for product repos and case work
-- `coordination/`: shared status, active case memory, and handoff context
-- `experiments/`: case writeups, provisional findings, and workflow tests
+- `coordination/`: internal collaboration state and handoff context
+- `experiments/`: internal research material, not installed by default
 
-## Current Focus
+## Project Status
 
-Phase N closed (2026-05-22). No open PRs.
+This repository is distributed as a reusable Figma-to-code workflow
+package. Public installation docs intentionally describe the package,
+install/update commands, and repository layout only.
 
-Lettered phases A–N complete. Components closed: Tab, InputBox, Toolbar, Dialog, AIToolsRow, Sidebar,
-BrowserResultPage/AssistantSidebarPanel, WorkspacePage, TaskResultPage,
-FileListCard, NavigationMenu, SearchBar, ModelCard, TopTabBar (Phase I+J),
-UpgradeDialog (Phase K+L), BookmarkItem (Phase M), BookmarkBar (Phase N).
-
-No active track. Next: browser-ai-tools-product (independent product track).
-
-See [coordination/INDEX.md](coordination/INDEX.md) for full phase history
-and [coordination/WORKING-MEMORY.md](coordination/WORKING-MEMORY.md) for
-compact current state.
+Detailed collaboration history and raw case material live under
+`coordination/`, `cases/`, and `experiments/`; they are not part of the
+default installable package.

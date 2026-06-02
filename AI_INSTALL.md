@@ -28,6 +28,17 @@ This installs to:
 - `$HOME/.claude/commands/figma-to-code.md`
 - `$HOME/.agent-skills/figma-to-code-process`
 
+## Check For Updates
+
+After installing, agents can check whether a local copy is current by
+running the package helper from the installed location:
+
+```bash
+~/.codex/skills/figma-to-code-process/scripts/check-for-updates.sh
+```
+
+If it reports an update, rerun the preferred install command.
+
 ## Codex Skill Installer Alternative
 
 If you are using Codex's built-in `skill-installer`, install only the Codex
@@ -53,4 +64,3 @@ skills. Then invoke:
 ```text
 Use $figma-to-code-process to implement this Figma design in the target repo.
 ```
-

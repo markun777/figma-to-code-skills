@@ -34,3 +34,12 @@ Run a no-write install preview:
 ```bash
 scripts/install-figma-to-code-process.sh --dry-run
 ```
+
+Check an installed Codex copy for updates:
+
+```bash
+~/.codex/skills/figma-to-code-process/scripts/check-for-updates.sh
+```
+
+The checker reports whether the installed commit matches the current
+`main` branch and prints refresh commands when an update is available.
