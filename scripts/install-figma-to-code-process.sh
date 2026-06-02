@@ -8,6 +8,8 @@ install_codex=1
 install_claude=1
 install_generic=1
 dry_run=0
+source_url="https://github.com/markun777/figma-to-code-skills.git"
+source_ref="main"
 
 usage() {
   cat <<'USAGE'
@@ -87,7 +89,29 @@ copy_package() {
   mkdir -p "$(dirname "${destination}")"
   rm -rf "${destination}"
   cp -R "${package_dir}" "${destination}"
+  write_install_metadata "${destination}"
   echo "Installed package -> ${destination}"
+}
+
+write_install_metadata() {
+  local destination="$1"
+  local metadata_file="${destination}/.install-metadata"
+  local installed_commit="unknown"
+  local installed_at
+
+  installed_at="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+  if git -C "${repo_root}" rev-parse HEAD >/dev/null 2>&1; then
+    installed_commit="$(git -C "${repo_root}" rev-parse HEAD)"
+  fi
+
+  cat > "${metadata_file}" <<METADATA
+source_url='${source_url}'
+source_ref='${source_ref}'
+installed_commit='${installed_commit}'
+installed_at='${installed_at}'
+update_command='scripts/install-figma-to-code-process.sh --all'
+refresh_command='curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash'
+METADATA
 }
 
 write_claude_command() {
@@ -124,4 +148,3 @@ if [[ "${install_generic}" -eq 1 ]]; then
 fi
 
 echo "Done. Invoke the package as figma-to-code-process."
-
