@@ -99,3 +99,13 @@ rewrite only.
 When a skill produces a recurring wrong output during real testing,
 add an entry to its `Gotchas` section in the same PR that fixes it.
 Do not save failure patterns only in your memory.
+
+## Skill evolution proposals
+
+When a lesson might improve the reusable Figma-to-code process but the
+right target is not obvious, create a proposal under
+`contributions/inbox/` from `contributions/TEMPLATE.md` before changing
+long-lived rules. Classify the lesson as generic, platform-specific,
+project-specific, or uncertain. Promote accepted lessons through the
+smallest source artifact and a PR; do not silently rewrite installed
+local skills.
