@@ -13,6 +13,8 @@ other coding agents can follow the same checkpoints.
 5. Implement against the confirmed tech-stack profile.
 6. Verify the rendered result against the Figma source.
 7. Feed recurring mistakes back into gotchas, templates, or gates.
+8. Route reusable lessons through source-repo proposals and PRs; never
+   silently mutate installed local skills.
 
 ## Source Priority
 
@@ -37,5 +39,7 @@ workflow package repository.
 - `product-restoration-preflight.md`: product repo bootstrap gates.
 - `quality-gates.md`: executable gate descriptions from validated cases.
 - `official-skills-alignment.md`: boundary map against official Figma skills.
+- `evolution/`: contribution intake guidance and proposal template for
+  reviewable skill evolution.
 - `examples/`: distilled reusable patterns derived from completed cases.
 - `assets/product-restoration-template/`: copyable product preflight package.

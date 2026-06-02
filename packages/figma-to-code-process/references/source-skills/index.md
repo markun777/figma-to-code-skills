@@ -108,6 +108,16 @@ For each skill:
   code, but it should be invoked when implementation depends on real
   design-owned assets
 
+### `figma-to-code-skill-evolution`
+
+- `Role`: reviewable workflow improvement intake
+- `Scope`: turn real usage lessons into contribution proposals, gotcha
+  updates, workflow rules, quality gates, package examples, or template
+  changes through source-repo PRs
+- `Not for`: silently mutating installed local skills, promoting
+  project-specific evidence into the default package, or replacing the
+  normal implementation/verification workflow
+
 ## Gap-filling and acceleration skills
 
 ### `figma-sketch-to-system-components`
@@ -157,6 +167,7 @@ For each skill:
 - Component mapping: `figma-code-connect-components`
 - Library building: `figma-generate-library`
 - Asset export: `figma-export-slices`
+- Skill evolution: `figma-to-code-skill-evolution`
 - Gap-filling: `figma-sketch-to-system-components`
 - Screen generation: `figma-generate-design`
 - Web motion templates: `ui-motion-patterns`

@@ -26,6 +26,8 @@ current phase.
    - `verification`: compare rendered UI against a Figma source.
    - `canvas-write`: create or clean Figma boards, provisional states, or
      design-system structures.
+   - `skill-evolution`: convert a reusable lesson from real use into a
+     reviewable skill/workflow improvement proposal.
 4. Open `references/process-overview.md` for the phase map and checkpoint
    order.
 5. Load the narrow reference file for the active phase from
@@ -52,7 +54,9 @@ Run these gates for every real implementation case:
    rendered result to the Figma source. A clean build alone never closes a
    visual task.
 6. **Closeout:** record evidence, blockers, deferred non-blockers, and any
-   gotcha worth feeding back into the workflow.
+   gotcha worth feeding back into the workflow. Do not silently mutate
+   installed skills; route reusable lessons through source-repo proposals
+   and PRs.
 
 ## Phase Routing
 
@@ -74,6 +78,9 @@ Run these gates for every real implementation case:
   and copy `assets/product-restoration-template/` into the product repo.
 - For web motion only after state/source confirmation, load
   `references/source-skills/ui-motion-patterns.md`.
+- For reusable workflow lessons, load
+  `references/source-skills/figma-to-code-skill-evolution.md` and use the
+  contribution templates in `references/evolution/`.
 - For compact reusable examples, load `references/examples/README.md`.
 
 ## Clarification Policy
@@ -99,4 +106,7 @@ End every run with:
 - exact source Figma nodes or docs used;
 - build/run/verification commands and whether they passed;
 - any unresolved drift or blocked gate;
-- where the next agent should resume.
+- where the next agent should resume;
+- whether a reusable workflow lesson was found. If yes, include the
+  proposed generic rule, scope classification, and where the contribution
+  proposal or PR lives.
