@@ -25,8 +25,8 @@ that the generic official workflow is not enough for reliable
 implementation.
 
 Local rules may be stricter than official skills when they are backed by
-evidence from `agentic-browser-ui`, Figma node context, browser DOM
-measurement, or verified workflow failures.
+project evidence, Figma context, rendered measurement, or verified workflow
+failures.
 
 ## Skill Map
 
@@ -117,16 +117,12 @@ These repo rules intentionally go beyond the official baseline:
   or another platform-specific rendered measurement must match the Figma
   target for exact-size cases.
 
-## Next-Step Use In This Repo
+## Reusable Application
 
-Near term, this alignment does not require switching workflows. The next
-validation case should still be a narrow untouched component or state
-slice from the active Figma file.
-
-Medium term, use this alignment to choose the next larger track:
+Use this alignment to choose the appropriate workflow loop:
 
 1. **Code-to-canvas review loop:** use `figma-generate-design` to bring a
-   running `agentic-browser-ui` page/state back to Figma for side-by-side
+   running UI or structured implementation back to Figma for side-by-side
    review.
 2. **Library sync loop:** use `figma-generate-library` to promote confirmed
    tokens, styles, and component structures from code/rules into a Figma

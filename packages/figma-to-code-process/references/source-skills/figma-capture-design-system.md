@@ -63,7 +63,7 @@ documented system.
     evidence exists by nature
 
 > **Note:** the three-type evidence taxonomy above was validated on a
-> web/React project (agentic-browser-ui, Vite + TypeScript + Tailwind v4).
+> web/React project using Vite, TypeScript, and Tailwind.
 > It is not automatically applicable to iOS, Android, or other targets —
 > adapt evidence types to the platform's verification surface before
 > applying to non-web projects.
@@ -210,7 +210,7 @@ The interview flow branches by `target` from the tech-stack profile.
   designer's intended reusable definition, while the `设计稿` instances
   are screen-level compositions that may have per-screen overrides.
 - A component page that defines named frames with underscores and Chinese
-  labels (e.g. `screen/mobile-home`, `section/bottom-nav`) has more
+  labels (e.g. `screen/home`, `section/primary-nav`) has more
   structure than a flat list of unnamed frames. Capture this naming schema
   as part of the rule set — it directly maps to the implementation's file
   organization (e.g. `res/layout/`, `res/drawable/`, component files).

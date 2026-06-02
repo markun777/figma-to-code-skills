@@ -1,15 +1,15 @@
 # Quality Gates
 
-Executable checks for `agentic-browser-ui`. Run before opening a PR or after
-exporting new assets.
+Reusable gate patterns for Figma-to-code implementation repos. Adapt the
+command names and paths to the target repository.
 
 ## Available gates
 
-```
-npm run gate                # run all three checks
-npm run gate:empty-svgs     # SVG geometry check only
-npm run gate:external-urls  # external URL check only
-npm run gate:banned-assets  # banned/legacy asset usage check only
+```text
+<project gate command>                # run all configured checks
+<empty-svg gate command>              # SVG geometry check only
+<external-url gate command>           # external URL check only
+<banned-asset gate command>           # banned/legacy asset usage check only
 ```
 
 ## gate:empty-svgs
@@ -20,8 +20,6 @@ npm run gate:banned-assets  # banned/legacy asset usage check only
 **Why it matters:** Figma can export an ellipse node as an empty SVG group when
 the fill is `visible=false`. Without this gate, an agent may misread the empty
 export as a missing asset and hand-author geometry that should not exist.
-*(Incident: UpgradeDialog `upgrade-fail-circle` — ellipse fill was hidden, but
-the empty SVG was restored as a pink circle.)*
 
 **Exemption:** Add a `"note"` to the asset's entry in `slices-name-map.json`
 explaining why the empty SVG is intentional. The gate will print `[ok-exempt]`
@@ -36,12 +34,9 @@ and pass.
 `legacy/unused`, or similar keywords.
 
 **Why it matters:** An asset can have visible geometry but still be banned from
-rendering (e.g. `upgrade-fail-circle` — the circle was restored during a fix
-attempt, but the Figma source fill is `visible=false`). `gate:empty-svgs` would
-pass because the file is no longer empty. This gate catches the re-introduction
-of such assets in future PRs.
-*(Incident: UpgradeDialog circle was re-imported after being marked legacy —
-this gate would have blocked it.)*
+rendering when the source layer is hidden, deprecated, or explicitly marked as
+not part of the product state. `gate:empty-svgs` may pass after a later edit
+adds geometry back to the file, so a separate banned-asset gate is still needed.
 
 **Exemption:** Remove the `must not render` / `visible=false` language from the
 `slices-name-map.json` note only if the asset is genuinely re-enabled by a
@@ -59,8 +54,6 @@ committed.
 **Why it matters:** External URLs in verify/demo cards can be blocked by browser
 ORB policy, making the verify card silently invalid (image loads as 0×0,
 `naturalWidth=0`). The verify surface appears to work but proves nothing.
-*(Incident: BookmarkItem Wikimedia URLs — blocked by ORB, app favicon variants
-were never actually verified.)*
 
 **Exemption:** Add `// allow-external-url` as a comment on the same line if the
 external URL is intentional and the ORB risk is accepted.
@@ -69,9 +62,9 @@ external URL is intentional and the ORB risk is accepted.
 
 ## Process rule
 
-All three gates should pass before a component case is marked `closed` in its case
-card. Add a `gate` row to the Verification Status table:
+All configured gates should pass before a case is marked closed. Record the
+gate command and result in the closeout or verification artifact:
 
 | Check | Status |
 |---|---|
-| `npm run gate` | passed |
+| `<project gate command>` | passed |
