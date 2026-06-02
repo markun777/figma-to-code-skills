@@ -36,6 +36,11 @@ current phase.
 6. When an example would help, load `references/examples/README.md` and then
    the one distilled example that matches the current failure mode. Do not
    treat examples as source-of-truth for the current product.
+7. When the user asks whether this installed package is current, or when an
+   update check is explicitly useful, run
+   `scripts/check-for-updates.sh` from this package if it exists. If it reports
+   an update, tell the user to refresh from the source repo or run the install
+   script from the checked-out repository.
 
 ## Required Gates
 
