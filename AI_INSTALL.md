@@ -18,7 +18,7 @@ figma-to-code-process
 For Codex, Claude Code, and generic agent-skill directories, run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TAI-IPX/figma-to-code-skills/main/scripts/install-from-github.sh | bash
 ```
 
 This installs to:
@@ -46,14 +46,14 @@ skill with:
 
 ```bash
 python3 /Users/markun/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo markun777/figma-to-code-skills \
+  --repo TAI-IPX/figma-to-code-skills \
   --path packages/figma-to-code-process
 ```
 
 Or use the direct GitHub tree URL:
 
 ```text
-https://github.com/markun777/figma-to-code-skills/tree/main/packages/figma-to-code-process
+https://github.com/TAI-IPX/figma-to-code-skills/tree/main/packages/figma-to-code-process
 ```
 
 ## After Install

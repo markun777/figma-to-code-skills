@@ -8,7 +8,7 @@ install_codex=1
 install_claude=1
 install_generic=1
 dry_run=0
-source_url="https://github.com/markun777/figma-to-code-skills.git"
+source_url="https://github.com/TAI-IPX/figma-to-code-skills.git"
 source_ref="main"
 
 usage() {
@@ -110,7 +110,7 @@ source_ref='${source_ref}'
 installed_commit='${installed_commit}'
 installed_at='${installed_at}'
 update_command='scripts/install-figma-to-code-process.sh --all'
-refresh_command='curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash'
+refresh_command='curl -fsSL https://raw.githubusercontent.com/TAI-IPX/figma-to-code-skills/main/scripts/install-from-github.sh | bash'
 METADATA
 }
 

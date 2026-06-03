@@ -5,10 +5,10 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 skill_dir="$(cd "${script_dir}/.." && pwd)"
 metadata_file="${skill_dir}/.install-metadata"
 
-source_url="https://github.com/markun777/figma-to-code-skills.git"
+source_url="https://github.com/TAI-IPX/figma-to-code-skills.git"
 source_ref="main"
 installed_commit=""
-refresh_command="curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash"
+refresh_command="curl -fsSL https://raw.githubusercontent.com/TAI-IPX/figma-to-code-skills/main/scripts/install-from-github.sh | bash"
 
 if [[ -f "${metadata_file}" ]]; then
   # shellcheck disable=SC1090
