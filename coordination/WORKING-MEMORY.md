@@ -11,7 +11,7 @@ Compact project memory for starting a new thread quickly.
 ## Shared Coordination
 
 - stable entry: `coordination/INDEX.md`
-- current active issue: [#13](https://github.com/markun777/figma-to-code-skills/issues/13) — permanent coordination log, never close
+- current active issue: [#13](https://github.com/TAI-IPX/figma-to-code-skills/issues/13) — permanent coordination log, never close
 
 ## Active Figma File
 

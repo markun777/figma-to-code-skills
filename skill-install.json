@@ -12,7 +12,6 @@
   "install": {
     "script": "scripts/install-figma-to-code-process.sh",
     "from_github_script": "scripts/install-from-github.sh",
-    "raw_command": "curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash"
+    "raw_command": "curl -fsSL https://raw.githubusercontent.com/TAI-IPX/figma-to-code-skills/main/scripts/install-from-github.sh | bash"
   }
 }
-

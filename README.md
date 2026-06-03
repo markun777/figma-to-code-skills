@@ -17,13 +17,13 @@ packages/figma-to-code-process
 One-command install for Codex, Claude Code, and generic agent skill folders:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/markun777/figma-to-code-skills/main/scripts/install-from-github.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TAI-IPX/figma-to-code-skills/main/scripts/install-from-github.sh | bash
 ```
 
 Local clone install:
 
 ```bash
-git clone https://github.com/markun777/figma-to-code-skills.git
+git clone https://github.com/TAI-IPX/figma-to-code-skills.git
 cd figma-to-code-skills
 ./install.sh
 ```
